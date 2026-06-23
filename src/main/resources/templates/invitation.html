@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title th:text="|${wedding.groomName} ♥ ${wedding.brideName} 결혼합니다|">결혼합니다</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+
+    <meta property="og:title"
+          th:content="|${wedding.groomName} ♥ ${wedding.brideName} 결혼합니다|">
+
+    <meta property="og:description"
+          th:content="|${wedding.weddingDate} ${wedding.mapPlaceName}|">
+
+    <meta property="og:image"
+          content="https://wedding-project-production-4dc2.up.railway.app/images/og-image.png">
+
+    <meta property="og:url"
+          content="https://wedding-project-production-4dc2.up.railway.app/">
     <style>
         /* 스크롤바 완전 제거 - 인라인으로 최우선 적용 */
         *,*::before,*::after{scrollbar-width:none!important;-ms-overflow-style:none!important;}
@@ -19,6 +33,7 @@
     <!-- 카카오맵 JS SDK — invitation.html 자체 로드 (iframe 안에서도 정상 동작) -->
     <script th:attr="src=|https://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoAppKey}&autoload=false|"></script>
 </head>
+
 <body>
 
 <div class="petals" id="petals"></div>
